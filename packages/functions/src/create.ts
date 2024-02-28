@@ -3,8 +3,6 @@ import { Table } from "sst/node/table";
 import handler from "@notes/core/handler";
 import dynamoDb from "@notes/core/dynamodb";
 
-const dynamoDB = new AWS.DynamoDB.DocumentClient();
-
 export const main = handler(async (event) => {
   let data = {
     content: "",
