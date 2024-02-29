@@ -4,6 +4,7 @@ import { Amplify } from "aws-amplify";
 import config from "./config.ts";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
 Amplify.configure({
@@ -16,15 +17,15 @@ Amplify.configure({
   },
   Storage: {
     S3: {
-      region: config.cognito.REGION,
+      region: config.s3.REGION,
       bucket: config.s3.BUCKET,
     },
   },
   API: {
     REST: {
-      notes: {
-        endpoint: config.apiGateway.URL,
-        region: config.apiGateway.REGION,
+      noteAPI: {
+        endpoint: "https://ngojw5vo6f.execute-api.ap-southeast-2.amazonaws.com",
+        region: "ap-southeast-2",
       },
     },
   },
